@@ -1,0 +1,19 @@
+name: Hello Workflow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a message
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show who and where
+        run: |
+          echo "Running on: $RUNNER_OS"
+          echo "Repo: $GITHUB_REPOSITORY"
+          date
